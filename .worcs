@@ -1,0 +1,7 @@
+worcs_version: 0.1.5
+creator: annem
+checksums:
+  df2.csv: 1198a425b1f2f004bc5e13031a6116bc
+data:
+  df2.csv:
+    codebook: codebook_df2.Rmd
