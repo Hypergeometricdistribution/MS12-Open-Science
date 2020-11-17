@@ -95,15 +95,29 @@ We used `r cite_r("r-references.bib")` for all our analyses.
 
 ```{r}
 load_data("socialproblems.csv")
+
 fit1 <- lm(socprob ~ anxious, data = df2)
 summary(fit1)
+
 fit2 <- lm(socprob ~ anxious + age, data = df2)
 summary(fit2)
+
 anova(fit1, fit2)
+
 plot(df2$anxious, df2$socprob)
 abline(fit1)
+
 par(mfrow=c(2,2))
 plot(fit1)
+
+df2$sex <- df2$gender
+df2$sex[df2$sex == 1] <- 0
+df2$sex[df2$sex == 2] <- 1
+
+fit3 <- lm(socprob ~ anxious + age + sex, data = df2)
+summary(fit3)
+
+anova(fit1, fit3)
 
 ```
 
